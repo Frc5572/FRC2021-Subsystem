@@ -5,6 +5,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 
 public class RobotContainer {
-    Joystick driver = new Joystick(0);
-    Joystick operator = new Joystick(1);
+  Joystick driver = new Joystick(0);
+  Joystick operator = new Joystick(1);
 }

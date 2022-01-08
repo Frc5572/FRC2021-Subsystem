@@ -4,7 +4,6 @@
 
 package frc.robot;
 
-import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -14,11 +13,10 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  * the package after creating this project, you must also update the build.gradle file in the
  * project.
  */
-
 public class Robot extends TimedRobot {
 
-    //Creates the Robot Container object
-    RobotContainer robotContainer;
+  // Creates the Robot Container object
+  RobotContainer robotContainer;
 
   @Override
   public void robotInit() {
@@ -30,8 +28,7 @@ public class Robot extends TimedRobot {
   public void robotPeriodic() {
     System.out.println("Robot Periodic");
     CommandScheduler.getInstance().run();
-    }
-
+  }
 
   @Override
   public void autonomousInit() {
