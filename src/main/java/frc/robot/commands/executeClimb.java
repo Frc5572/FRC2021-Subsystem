@@ -11,9 +11,11 @@ public class executeClimb extends CommandBase {
     addRequirements(climb);
   }
 
-  @Override
-  public void execute() {
-    int DPadDown = 180;
-    this.climb.climb();
+  public void executeClimberPistons() {
+    this.climb.deployClimber();
+  }
+
+  public void executeClimberMotors() {
+      this.climb.engageClimber();
   }
 }
