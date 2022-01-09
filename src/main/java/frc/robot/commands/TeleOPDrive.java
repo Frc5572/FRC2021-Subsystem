@@ -1,6 +1,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
 
@@ -16,8 +17,8 @@ public class TeleOPDrive extends CommandBase {
 
   @Override
   public void execute() {
-    double LeftYAxis = -driver.getRawAxis(1);
-    double RightYAxis = -driver.getRawAxis(3);
+    double LeftYAxis = -driver.getRawAxis(XboxController.Axis.kLeftY.value);
+    double RightYAxis = -driver.getRawAxis(XboxController.Axis.kRightY.value);
     LeftYAxis = (Math.abs(LeftYAxis) < .01) ? 0 : LeftYAxis;
     RightYAxis = (Math.abs(RightYAxis) < .01) ? 0 : RightYAxis;
     this.tankdrive.tankDrive(LeftYAxis, RightYAxis);
