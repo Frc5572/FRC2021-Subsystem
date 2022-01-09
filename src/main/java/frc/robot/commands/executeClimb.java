@@ -1,20 +1,19 @@
 package frc.robot.commands;
 
-import frc.robot.subsystems.Climber;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj.Joystick;
+import frc.robot.subsystems.Climber;
 
 public class executeClimb extends CommandBase {
-    private Climber climb;
+  private Climber climb;
 
-    public executeClimb(Climber climb){
-        this.climb = climb;
-        addRequirements(climb);
-    }
+  public executeClimb(Climber climb) {
+    this.climb = climb;
+    addRequirements(climb);
+  }
 
-    @Override
-    public void execute() {
-        int DPadDown = 180;
-        this.climb.climb();
-    }
+  @Override
+  public void execute() {
+    int DPadDown = 180;
+    this.climb.climb();
+  }
 }
