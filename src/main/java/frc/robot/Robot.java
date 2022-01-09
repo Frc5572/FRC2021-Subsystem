@@ -20,35 +20,25 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotInit() {
-    System.out.println("Robot Init");
     robotContainer = new RobotContainer();
   }
 
   @Override
   public void robotPeriodic() {
-    System.out.println("Robot Periodic");
     CommandScheduler.getInstance().run();
   }
 
   @Override
-  public void autonomousInit() {
-    System.out.println("Auto Init");
-  }
+  public void autonomousInit() {}
 
   @Override
-  public void autonomousPeriodic() {
-    System.out.println("Auto Periodic");
-  }
+  public void autonomousPeriodic() {}
 
   @Override
-  public void teleopInit() {
-    System.out.println("Teleop Init");
-  }
+  public void teleopInit() {}
 
   @Override
-  public void teleopPeriodic() {
-    System.out.println("Teleop Periodic");
-  }
+  public void teleopPeriodic() {}
 
   /** This function is called once when the robot is disabled. */
   @Override
