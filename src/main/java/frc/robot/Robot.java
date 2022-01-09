@@ -29,20 +29,16 @@ public class Robot extends TimedRobot {
   }
 
   @Override
-  public void autonomousInit() {
-  }
+  public void autonomousInit() {}
 
   @Override
-  public void autonomousPeriodic() {
-  }
+  public void autonomousPeriodic() {}
 
   @Override
-  public void teleopInit() {
-  }
+  public void teleopInit() {}
 
   @Override
-  public void teleopPeriodic() {
-  }
+  public void teleopPeriodic() {}
 
   /** This function is called once when the robot is disabled. */
   @Override
