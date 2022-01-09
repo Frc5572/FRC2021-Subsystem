@@ -4,8 +4,8 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Climber extends SubsystemBase {
   int PCM1 = 0;
@@ -15,7 +15,8 @@ public class Climber extends SubsystemBase {
   private final DoubleSolenoid climberSol2 = new DoubleSolenoid(PCM1, 7, 0);
   private final CANSparkMax m_Climber1 = new CANSparkMax(16, MotorType.kBrushless);
   private final CANSparkMax m_Climber2 = new CANSparkMax(15, MotorType.kBrushless);
-  private final SpeedControllerGroup climberMotors = new SpeedControllerGroup(m_Climber1, m_Climber2);
+  private final SpeedControllerGroup climberMotors =
+      new SpeedControllerGroup(m_Climber1, m_Climber2);
 
   public Climber() {
     m_Climber1.setInverted(true);
