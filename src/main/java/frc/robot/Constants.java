@@ -4,7 +4,7 @@ import com.revrobotics.ColorMatch;
 import edu.wpi.first.wpilibj.util.Color;
 
 /**
-* Create Constants
+* Create Constants.
 */
 public final class Constants {
   final double x1 = -0.0000000025291;
@@ -27,8 +27,8 @@ public final class Constants {
 
   private final ColorMatch colorMatcher1 = new ColorMatch();
 
-  private final Color kBlueTarget1 = ColorMatch.makeColor(0, 0, 1);
-  private final Color kGreenTarget1 = ColorMatch.makeColor(0, 1, 0);
-  private final Color kRedTarget1 = ColorMatch.makeColor(1, 0, 0);
-  private final Color kYellowTarget1 = ColorMatch.makeColor(.5, 1, 0);
+  private final Color blueTarget1 = ColorMatch.makeColor(0, 0, 1);
+  private final Color greenTarget1 = ColorMatch.makeColor(0, 1, 0);
+  private final Color redTarget1 = ColorMatch.makeColor(1, 0, 0);
+  private final Color yellowTarget1 = ColorMatch.makeColor(.5, 1, 0);
 }
