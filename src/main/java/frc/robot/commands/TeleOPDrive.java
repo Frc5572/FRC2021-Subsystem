@@ -16,8 +16,10 @@ public class TeleOPDrive extends CommandBase {
 
   @Override
   public void execute() {
-    double yAxis = -driver.getRawAxis(1);
-    yAxis = (Math.abs(yAxis) < .01) ? 0 : yAxis;
-    this.tankdrive.tankDrive(yAxis);
+    double LeftYAxis = -driver.getRawAxis(1);
+    double RightYAxis = -driver.getRawAxis(3);
+    LeftYAxis = (Math.abs(LeftYAxis) < .01) ? 0 : LeftYAxis;
+    RightYAxis = (Math.abs(RightYAxis) < .01) ? 0 : RightYAxis;
+    this.tankdrive.tankDrive(LeftYAxis, RightYAxis);
   }
 }

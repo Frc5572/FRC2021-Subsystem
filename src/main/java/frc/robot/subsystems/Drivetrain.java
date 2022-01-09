@@ -14,8 +14,8 @@ public class Drivetrain extends SubsystemBase {
     rightMotors.setInverted(true);
   }
 
-  public void tankDrive(double yAxis) {
+  public void tankDrive(double yAxis, double yAxis2) {
     leftMotors.set(yAxis);
-    rightMotors.set(yAxis);
+    rightMotors.set(yAxis2);
   }
 }
