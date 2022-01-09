@@ -1,8 +1,9 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.util.Color;
 import com.revrobotics.ColorMatch;
+import edu.wpi.first.wpilibj.util.Color;
 
+//Create Constants
 public final class Constants {
   final double x1 = -0.0000000025291;
   final double x2 = 0.0000334240538;
@@ -24,8 +25,8 @@ public final class Constants {
 
   private final ColorMatch m_colorMatcher = new ColorMatch();
 
-  private final Color kBlueTarget = ColorMatch.makeColor(0,0,1);
-  private final Color kGreenTarget = ColorMatch.makeColor(0,1,0);
-  private final Color kRedTarget = ColorMatch.makeColor(1,0,0);
+  private final Color kBlueTarget = ColorMatch.makeColor(0, 0, 1);
+  private final Color kGreenTarget = ColorMatch.makeColor(0, 1, 0);
+  private final Color kRedTarget = ColorMatch.makeColor(1, 0, 0);
   private final Color kYellowTarget = ColorMatch.makeColor(.5, 1, 0);
 }
