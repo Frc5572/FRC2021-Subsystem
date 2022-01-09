@@ -12,16 +12,16 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  linting:
-    name: Linting
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2 # v2 minimum required
-      - uses: axel-op/googlejavaformat-action@v3
-        with:
-          args: "--replace"
-          # Recommended if you use MacOS:
-          # githubToken: ${{ secrets.GITHUB_TOKEN }}
+  # linting:
+  #   name: Linting
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2 # v2 minimum required
+  #     - uses: axel-op/googlejavaformat-action@v3
+  #       with:
+  #         args: "--replace"
+  #         # Recommended if you use MacOS:
+  #         # githubToken: ${{ secrets.GITHUB_TOKEN }}
   build:
     name: Build
     runs-on: windows-2019

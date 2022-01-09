@@ -8,51 +8,62 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 /**
- * The VM is configured to automatically run this class, and to call the functions corresponding to
- * each mode, as described in the TimedRobot documentation. If you change the name of this class or
- * the package after creating this project, you must also update the build.gradle file in the
+ * The VM is configured to automatically run this class, and to call the
+ * functions corresponding to
+ * each mode, as described in the TimedRobot documentation. If you change the
+ * name of this class or
+ * the package after creating this project, you must also update the
+ * build.gradle file in the
  * project.
  */
 public class Robot extends TimedRobot {
 
-  // Creates the Robot Container object
-  RobotContainer robotContainer;
+    // Creates the Robot Container object
+    RobotContainer robotContainer;
 
-  @Override
-  public void robotInit() {
-    robotContainer = new RobotContainer();
-  }
+    @Override
+    public void robotInit() {
+        robotContainer = new RobotContainer();
+    }
 
-  @Override
-  public void robotPeriodic() {
-    CommandScheduler.getInstance().run();
-  }
+    @Override
+    public void robotPeriodic() {
+        CommandScheduler.getInstance().run();
+    }
 
-  @Override
-  public void autonomousInit() {}
+    @Override
+    public void autonomousInit() {
+    }
 
-  @Override
-  public void autonomousPeriodic() {}
+    @Override
+    public void autonomousPeriodic() {
+    }
 
-  @Override
-  public void teleopInit() {}
+    @Override
+    public void teleopInit() {
+    }
 
-  @Override
-  public void teleopPeriodic() {}
+    @Override
+    public void teleopPeriodic() {
+    }
 
-  /** This function is called once when the robot is disabled. */
-  @Override
-  public void disabledInit() {}
+    /** This function is called once when the robot is disabled. */
+    @Override
+    public void disabledInit() {
+    }
 
-  /** This function is called periodically when disabled. */
-  @Override
-  public void disabledPeriodic() {}
+    /** This function is called periodically when disabled. */
+    @Override
+    public void disabledPeriodic() {
+    }
 
-  /** This function is called once when test mode is enabled. */
-  @Override
-  public void testInit() {}
+    /** This function is called once when test mode is enabled. */
+    @Override
+    public void testInit() {
+    }
 
-  /** This function is called periodically during test mode. */
-  @Override
-  public void testPeriodic() {}
+    /** This function is called periodically during test mode. */
+    @Override
+    public void testPeriodic() {
+    }
 }
