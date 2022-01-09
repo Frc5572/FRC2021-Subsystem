@@ -1,12 +1,12 @@
 package frc.robot;
-import frc.robot.autos.*;
+
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.autos.*;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
-import edu.wpi.first.wpilibj2.command.Command;
 import java.util.ArrayList;
 import java.util.TreeMap;
-
 
 public class RobotContainer {
   Joystick driver = new Joystick(0);
