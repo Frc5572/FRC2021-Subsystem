@@ -1,8 +1,8 @@
 package frc.robot;
 // import frc.robot.Autonomi.*;
+import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
-import edu.wpi.first.wpilibj.Joystick;
 
 public class RobotContainer {
   Joystick driver = new Joystick(0);
@@ -13,5 +13,4 @@ public class RobotContainer {
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
   }
-
 }
