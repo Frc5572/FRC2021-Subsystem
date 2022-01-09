@@ -5,10 +5,8 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
-  private final SpeedControllerGroup leftMotors =
-      new SpeedControllerGroup(new WPI_TalonSRX(4), new WPI_TalonSRX(8));
-  private final SpeedControllerGroup rightMotors =
-      new SpeedControllerGroup(new WPI_TalonSRX(3), new WPI_TalonSRX(2));
+  private final SpeedControllerGroup leftMotors = new SpeedControllerGroup(new WPI_TalonSRX(4), new WPI_TalonSRX(8));
+  private final SpeedControllerGroup rightMotors = new SpeedControllerGroup(new WPI_TalonSRX(3), new WPI_TalonSRX(2));
 
   public Drivetrain() {
     rightMotors.setInverted(true);
