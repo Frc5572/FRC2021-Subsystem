@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -14,12 +15,13 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  * project.
  */
 public class Robot extends TimedRobot {
-
-  // Creates the Robot Container object
   RobotContainer robotContainer;
+  Compressor compressor = new Compressor();
 
   @Override
   public void robotInit() {
+    compressor.setClosedLoopControl(true);
+    compressor.start();
     robotContainer = new RobotContainer();
   }
 
