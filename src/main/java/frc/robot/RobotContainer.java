@@ -11,7 +11,5 @@ public class RobotContainer {
 
   private final Drivetrain tankDrive = new Drivetrain();
 
-  public RobotContainer() {
-    tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
-  }
+  public RobotContainer() { tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver)); }
 }
