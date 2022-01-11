@@ -15,7 +15,7 @@ public class RobotContainer {
   private final Drivetrain tankDrive = new Drivetrain();
   private TreeMap<String, Command> autos = new TreeMap<String, Command>();
   private ArrayList<String> autoNames;
-  private int cA1 = 0;
+  private int cauto = 0;
   private int lengthOfList;
 
   public RobotContainer() {
@@ -23,6 +23,6 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
-    return autos.get(autoNames.get(cA1));
+    return autos.get(autoNames.get(cauto));
   }
 }
