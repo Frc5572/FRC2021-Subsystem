@@ -1,7 +1,7 @@
 package frc.robot.autos;
 
 /**
-* Base Auto file
+* Base Auto file.
 */
 
 public class Auto {}
