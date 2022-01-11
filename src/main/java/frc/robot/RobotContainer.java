@@ -2,7 +2,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.autos.*;
+import frc.robot.autos.Auto;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class RobotContainer {
   private final Drivetrain tankDrive = new Drivetrain();
   private TreeMap<String, Command> autos = new TreeMap<String, Command>();
   private ArrayList<String> autoNames;
-  private int curr_auto = 0;
+  private int cAuto = 0;
   private int lengthOfList;
 
   public RobotContainer() {
@@ -23,6 +23,6 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
-    return autos.get(autoNames.get(curr_auto));
+    return autos.get(autoNames.get(cAuto));
   }
 }
