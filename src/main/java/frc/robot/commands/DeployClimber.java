@@ -6,23 +6,18 @@ import frc.robot.subsystems.Climber;
 /**
 * Returns a Command to run the climber.
 */
-public class ExecuteClimber extends CommandBase {
+public class DeployClimber extends CommandBase {
   private Climber climb;
 
-  public ExecuteClimber(Climber climb) {
+  public DeployClimber(Climber climb) {
     this.climb = climb;
     addRequirements(climb);
   }
 
   @Override
   public void execute() {
-    this.climb.engageClimber();
+    this.climb.deployClimber();
   }
 
-
-  @Override
-  public void end(boolean interrupted) {
-    this.climb.disengageClimber();
-  }
 
 }

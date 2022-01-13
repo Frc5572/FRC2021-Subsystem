@@ -18,8 +18,7 @@ public class Climber extends SubsystemBase {
   private final DoubleSolenoid climberSol2 = new DoubleSolenoid(pcm1, 7, 0);
   private final CANSparkMax climber1 = new CANSparkMax(16, MotorType.kBrushless);
   private final CANSparkMax climber2 = new CANSparkMax(15, MotorType.kBrushless);
-  private final SpeedControllerGroup climberMotors =
-      new SpeedControllerGroup(climber1, climber2);
+  private final SpeedControllerGroup climberMotors = new SpeedControllerGroup(climber1, climber2);
 
   public Climber() {
     climber1.setInverted(true);

@@ -17,7 +17,6 @@ public class RobotContainer {
   private final POVButton rachetMotors = new POVButton(driver, 180);
   private final Drivetrain tankDrive = new Drivetrain();
   private final Climber climb = new Climber();
-  private final ExecuteClimber climb2 = new ExecuteClimber(climb);
 
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
@@ -25,8 +24,9 @@ public class RobotContainer {
   }
 
   private void configureButtonBindings() {
-    deploy.whenPressed(new InstantCommand(() -> climb2.executeClimberPistons()));
-    rachetMotors.whenHeld(new InstantCommand(() -> climb2.executeClimberMotors()));
-    rachetMotors.whenReleased(new InstantCommand(() -> climb2.stopClimberMotors()));
+    deploy.whenPressed(new DeployClimber(climb));
+    rachetMotors.whileHeld(new ExecuteClimber(climb));
   }
+
+
 }
