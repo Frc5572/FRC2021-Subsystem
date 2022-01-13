@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Climber;
 
 /**
-* Returns a Command to run the climber
+* Returns a Command to run the climber.
 */
 public class ExecuteClimber extends CommandBase {
   private Climber climb;
