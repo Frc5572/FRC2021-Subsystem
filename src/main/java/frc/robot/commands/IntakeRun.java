@@ -26,6 +26,10 @@ public class IntakeRun extends CommandBase {
     intake.intakeIn();
   }
 
+  @Override
+  public void execute(){
+    this.intakeIn();
+  }
   
 
 }
