@@ -25,8 +25,8 @@ public class RobotContainer {
   }
 
   private void configureButtonBindings() {
-    deploy.whenPressed(new InstantCommand(() -> climb2.ExecuteClimberPistons()));
-    rachetMotors.whenHeld(new InstantCommand(() -> climb2.ExecuteClimberMotors()));
+    deploy.whenPressed(new InstantCommand(() -> climb2.executeClimberPistons()));
+    rachetMotors.whenHeld(new InstantCommand(() -> climb2.executeClimberMotors()));
     rachetMotors.whenReleased(new InstantCommand(() -> climb2.stopClimberMotors()));
   }
 }

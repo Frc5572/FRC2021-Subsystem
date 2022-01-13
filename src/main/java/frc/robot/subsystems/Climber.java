@@ -7,20 +7,22 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-// Climber Subsystem
+/**
+* Returns a Climber object that runs the motors and pistons.
+*/
 public class Climber extends SubsystemBase {
   int pcm1 = 0;
   int pcm2 = 1;
 
   private final DoubleSolenoid climberSol1 = new DoubleSolenoid(pcm2, 4, 3);
   private final DoubleSolenoid climberSol2 = new DoubleSolenoid(pcm1, 7, 0);
-  private final CANSparkMax m_climber1 = new CANSparkMax(16, MotorType.kBrushless);
-  private final CANSparkMax m_climber2 = new CANSparkMax(15, MotorType.kBrushless);
+  private final CANSparkMax climber1 = new CANSparkMax(16, MotorType.kBrushless);
+  private final CANSparkMax climber2 = new CANSparkMax(15, MotorType.kBrushless);
   private final SpeedControllerGroup climberMotors =
-      new SpeedControllerGroup(m_climber1, m_climber2);
+      new SpeedControllerGroup(climber1, climber2);
 
   public Climber() {
-    m_climber1.setInverted(true);
+    climber1.setInverted(true);
   }
 
   public void initialize() {

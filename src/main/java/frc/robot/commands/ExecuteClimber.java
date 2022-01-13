@@ -3,7 +3,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Climber;
 
-// Climb
+/**
+* Returns a Command to run the climber
+*/
 public class ExecuteClimber extends CommandBase {
   private Climber climb;
 
@@ -12,11 +14,11 @@ public class ExecuteClimber extends CommandBase {
     addRequirements(climb);
   }
 
-  public void ExecuteClimberPistons() {
+  public void executeClimberPistons() {
     this.climb.deployClimber();
   }
 
-  public void ExecuteClimberMotors() {
+  public void executeClimberMotors() {
     this.climb.engageClimber();
   }
 
