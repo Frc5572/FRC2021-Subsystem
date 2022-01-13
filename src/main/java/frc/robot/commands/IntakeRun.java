@@ -18,17 +18,15 @@ public class IntakeRun extends CommandBase {
 
   }
 
-  public void intakeOut(){
+  @Override
+  public void execute(){
     intake.intakeOut();
   }
 
-  public void intakeIn(){
-    intake.intakeIn();
-  }
-
+  
   @Override
-  public void execute(){
-    this.intakeIn();
+  public void end(boolean interruptible){
+    intake.intakeIn();
   }
   
 

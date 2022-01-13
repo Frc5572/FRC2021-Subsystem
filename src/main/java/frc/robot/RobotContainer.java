@@ -17,12 +17,11 @@ public class RobotContainer {
   private final JoystickButton intakeButton = new JoystickButton(operator, XboxController.Button.kB.value);
 
   public RobotContainer() {
-    intake.setDefaultCommand(new IntakeRun(intake));
-    configureButtonBindings();
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
+    configureButtonBindings();
   }
 
-  private void configureButtonBindings(){
-    intakeButton.whenPressed(new InstantCommand(() -> intake.intakeOut()));
+  private void configureButtonBindings(){ 
+    intakeButton.whileHeld(new IntakeRun(intake));
   }
 }
