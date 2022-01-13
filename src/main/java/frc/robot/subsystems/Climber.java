@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-//Climber Subsystem
+// Climber Subsystem
 public class Climber extends SubsystemBase {
   int pcm1 = 0;
   int pcm2 = 1;
@@ -16,7 +16,8 @@ public class Climber extends SubsystemBase {
   private final DoubleSolenoid climberSol2 = new DoubleSolenoid(pcm1, 7, 0);
   private final CANSparkMax m_climber1 = new CANSparkMax(16, MotorType.kBrushless);
   private final CANSparkMax m_climber2 = new CANSparkMax(15, MotorType.kBrushless);
-  private final SpeedControllerGroup climberMotors = new SpeedControllerGroup(m_climber1, m_climber2);
+  private final SpeedControllerGroup climberMotors =
+      new SpeedControllerGroup(m_climber1, m_climber2);
 
   public Climber() {
     m_climber1.setInverted(true);
@@ -37,6 +38,6 @@ public class Climber extends SubsystemBase {
   }
 
   public void disengageClimber() {
-      climberMotors.set(0);
+    climberMotors.set(0);
   }
 }
