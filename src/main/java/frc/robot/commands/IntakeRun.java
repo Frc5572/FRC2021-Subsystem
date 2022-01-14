@@ -5,17 +5,11 @@ import frc.robot.subsystems.Intake;
 
 
 public class IntakeRun extends CommandBase {
-
   private final Intake intake;
   
   public IntakeRun(Intake subsystem){
-   
-
-    intake = subsystem;
-
-    
+    this.intake = subsystem;
     addRequirements(intake);
-
   }
 
   @Override
