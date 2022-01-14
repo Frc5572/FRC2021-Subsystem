@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
-* This is the subsystem for the intake system
+* This is the subsystem for the intake system.
 */
 public class Intake extends SubsystemBase {
   int pcm1 = 0;
