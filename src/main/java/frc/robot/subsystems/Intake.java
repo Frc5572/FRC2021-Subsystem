@@ -7,11 +7,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Intake extends SubsystemBase {
 
-  int PCM1 = 0;
+  int pcm1 = 0;
 
   WPI_TalonSRX intakeMotor = new WPI_TalonSRX(11);
 
-  DoubleSolenoid intakeSol = new DoubleSolenoid(PCM1, 6, 1);
+  DoubleSolenoid intakeSol = new DoubleSolenoid(pcm1, 6, 1);
 
   public void intakeIn() {
     intakeMotor.set(0);
