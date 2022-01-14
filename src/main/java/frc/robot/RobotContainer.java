@@ -4,10 +4,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 import frc.robot.commands.*;
-import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.subsystems.*;
 
 
@@ -20,9 +18,8 @@ public class RobotContainer {
   private final Drivetrain tankDrive = new Drivetrain();
   private final Intake intake = new Intake();
   private final JoystickButton intakeButton = 
-    new JoystickButton(operator, XboxController.Button.kB.value);
+        new JoystickButton(operator, XboxController.Button.kB.value);
   private final Climber climb = new Climber();
-
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
     configureButtonBindings();
