@@ -15,6 +15,8 @@ public class RobotContainer {
 
   private final JoystickButton deploy = new JoystickButton(driver, XboxController.Button.kY.value);
   private final POVButton rachetMotors = new POVButton(driver, 180);
+  private final POVButton hopperIn = new POVButton(operator, 0);
+  private final POVButton hopperOut = new POVButton(operator, 180);
   private final Drivetrain tankDrive = new Drivetrain();
   private final Climber climb = new Climber();
   private final Hopper hopper = new Hopper();
@@ -27,6 +29,8 @@ public class RobotContainer {
   private void configureButtonBindings() {
     deploy.whenPressed(new DeployClimber(climb));
     rachetMotors.whileHeld(new ExecuteClimber(climb));
+    hopperIn.whileHeld(new HopperUp(hopper));
+    hopperOut.whileHeld(new HopperDown(hopper));
   }
 
 
