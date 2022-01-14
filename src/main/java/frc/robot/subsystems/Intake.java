@@ -4,9 +4,10 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-/*YES
-MAYBE
-NO */
+
+/*
+* This is the subsystem for the intake system
+*/
 public class Intake extends SubsystemBase {
   int pcm1 = 0;
   WPI_TalonSRX intakeMotor = new WPI_TalonSRX(11);
