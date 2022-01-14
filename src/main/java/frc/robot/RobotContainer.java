@@ -15,8 +15,11 @@ public class RobotContainer {
   private final JoystickButton deploy = new JoystickButton(driver, XboxController.Button.kY.value);
   private final POVButton rachetMotors = new POVButton(driver, 180);
   private final Drivetrain tankDrive = new Drivetrain();
+  private final Intake intake = new Intake();
+  private final JoystickButton intakeButton = 
+        new JoystickButton(operator, XboxController.Button.kB.value);
   private final Climber climb = new Climber();
-
+  
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
     configureButtonBindings();
@@ -25,6 +28,7 @@ public class RobotContainer {
   private void configureButtonBindings() {
     deploy.whenPressed(new DeployClimber(climb));
     rachetMotors.whileHeld(new ExecuteClimber(climb));
+    intakeButton.whileHeld(new IntakeRun(intake));
   }
 
 
