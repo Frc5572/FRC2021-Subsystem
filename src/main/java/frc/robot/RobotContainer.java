@@ -9,7 +9,10 @@ public class RobotContainer {
   Joystick driver = new Joystick(0);
   Joystick operator = new Joystick(1);
 
+  
+
   private final Drivetrain tankDrive = new Drivetrain();
+  private final Hopper hopper = new Hopper();
 
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
