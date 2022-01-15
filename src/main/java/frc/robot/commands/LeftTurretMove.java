@@ -8,11 +8,13 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Shooter;
 
 
-
+/**
+ * It creates a class that moves the turret to the left when the command execute.
+ */
 public class LeftTurretMove extends CommandBase {
   /** Creates a new LeftTurretMove. */
   private Shooter shooter;
-
+  
   public LeftTurretMove(Shooter shooter) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.shooter = shooter;

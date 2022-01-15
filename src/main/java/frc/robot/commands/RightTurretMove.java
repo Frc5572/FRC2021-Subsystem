@@ -7,7 +7,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Shooter;
 
-
+/**
+ * It creates a class that moves the turret to the right when it's executed.
+ */
 public class RightTurretMove extends CommandBase {
   /** Creates a new LeftTurretMove. */
   private Shooter shooter;

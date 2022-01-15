@@ -24,9 +24,12 @@ public class RobotContainer {
   private final JoystickButton intakeButton = 
         new JoystickButton(operator, XboxController.Button.kB.value);
   private final Climber climb = new Climber();
-  private final JoystickButton rightTurret = new JoystickButton(driver, XboxController.Button.kBumperRight.value);
-  private final JoystickButton leftTurret = new JoystickButton(driver, XboxController.Button.kBumperLeft.value);
-  private final Button shooterMotor = new Button(() -> Math.abs(driver.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4);
+  private final JoystickButton rightTurret =
+   new JoystickButton(driver, XboxController.Button.kBumperRight.value);
+  private final JoystickButton leftTurret =
+   new JoystickButton(driver, XboxController.Button.kBumperLeft.value);
+  private final Button shooterMotor =
+   new Button(() -> Math.abs(driver.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4);
   private final Shooter shooter = new Shooter();
   
   public RobotContainer() {
