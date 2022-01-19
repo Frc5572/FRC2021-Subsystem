@@ -17,7 +17,8 @@ public class RobotContainer {
   Joystick driver = new Joystick(0);
   Joystick operator = new Joystick(1);
 
-  private final JoystickButton deploy = new JoystickButton(driver, XboxController.Button.kY.value);
+  private final JoystickButton deploy = 
+  new JoystickButton(driver, XboxController.Button.kY.value);
   private final POVButton rachetMotors = new POVButton(driver, 180);
   private final Drivetrain tankDrive = new Drivetrain();
   private final Intake intake = new Intake();
