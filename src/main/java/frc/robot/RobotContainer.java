@@ -4,27 +4,37 @@
 
 package frc.robot;
 
-// import frc.robot.Autonomi.*;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.autos.Auto;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
+import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class RobotContainer {
   Joystick driver = new Joystick(0);
   Joystick operator = new Joystick(1);
 
-  private final JoystickButton deploy = 
-  new JoystickButton(driver, XboxController.Button.kY.value);
+
+  private final JoystickButton deploy = new JoystickButton(driver, XboxController.Button.kY.value);
   private final POVButton rachetMotors = new POVButton(driver, 180);
+  private final POVButton hopperIn = new POVButton(operator, 0);
+  private final POVButton hopperOut = new POVButton(operator, 180);
   private final Drivetrain tankDrive = new Drivetrain();
+  private TreeMap<String, Command> autos = new TreeMap<String, Command>();
+  private ArrayList<String> autoNames;
+  private int cauto = 0;
+  private int lengthOfList;
   private final Intake intake = new Intake();
-  private final JoystickButton intakeButton = 
+  private final JoystickButton intakeButton =
         new JoystickButton(operator, XboxController.Button.kB.value);
   private final Climber climb = new Climber();
+  private final Hopper hopper = new Hopper();
   private final JoystickButton rightTurret =
    new JoystickButton(driver, XboxController.Button.kBumperRight.value);
   private final JoystickButton leftTurret =
@@ -32,6 +42,7 @@ public class RobotContainer {
   private final Button shooterMotor =
    new Button(() -> Math.abs(driver.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4);
   private final Shooter shooter = new Shooter();
+  
   
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
@@ -41,11 +52,15 @@ public class RobotContainer {
   private void configureButtonBindings() {
     deploy.whenPressed(new DeployClimber(climb));
     rachetMotors.whileHeld(new ExecuteClimber(climb));
+    hopperIn.whileHeld(new HopperUp(hopper));
+    hopperOut.whileHeld(new HopperDown(hopper));
     intakeButton.whileHeld(new IntakeRun(intake));
     rightTurret.whileHeld(new RightTurretMove(shooter));
     leftTurret.whileHeld(new LeftTurretMove(shooter));
     shooterMotor.whenHeld(new ExecuteShooter(shooter));
   }
 
-
+  public Command getAutonomousCommand() {
+    return autos.get(autoNames.get(cauto));
+  }
 }
