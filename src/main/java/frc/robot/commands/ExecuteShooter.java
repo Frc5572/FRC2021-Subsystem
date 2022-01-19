@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Shooter;
 
+/** This creates a class that makes the shooter turn on and off
+ */
 public class ExecuteShooter extends CommandBase {
   /** Creates a new ExecuteShooter. */
   private Shooter shooter;
@@ -20,8 +22,7 @@ public class ExecuteShooter extends CommandBase {
   }
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {    
-  }
+  public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
