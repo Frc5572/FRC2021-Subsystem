@@ -2,29 +2,31 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.autos.Auto;
+import frc.robot.autos.TrajAuto;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
-import java.util.ArrayList;
-import java.util.TreeMap;
 
 public class RobotContainer {
   Joystick driver = new Joystick(0);
   Joystick operator = new Joystick(1);
 
+  private Command autoCommand;
+
+  private final SendableChooser<String> autoChooser = new SendableChooser<>();
+
+  private static final String TrajAuto = "Trajectory Auto";
 
   private final JoystickButton deploy = new JoystickButton(driver, XboxController.Button.kY.value);
   private final POVButton rachetMotors = new POVButton(driver, 180);
   private final POVButton hopperIn = new POVButton(operator, 0);
   private final POVButton hopperOut = new POVButton(operator, 180);
   private final Drivetrain tankDrive = new Drivetrain();
-  private TreeMap<String, Command> autos = new TreeMap<String, Command>();
-  private ArrayList<String> autoNames;
-  private int cauto = 0;
-  private int lengthOfList;
+
   private final Intake intake = new Intake();
   private final JoystickButton intakeButton =
         new JoystickButton(operator, XboxController.Button.kB.value);
@@ -35,6 +37,9 @@ public class RobotContainer {
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
     configureButtonBindings();
+
+    autoChooser.setDefaultOption("Trajectory Auto", TrajAuto);
+    SmartDashboard.putData("Choose Auto: ", autoChooser);
   }
 
   private void configureButtonBindings() {
@@ -46,6 +51,9 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
-    return autos.get(autoNames.get(cauto));
+    if(autoChooser.getSelected() == "Trajectory Auto"){
+      autoCommand = new TrajAuto(tankDrive);
+    }
+    return autoCommand;
   }
 }

@@ -32,6 +32,9 @@ public final class Constants {
   private final Color redTarget1 = ColorMatch.makeColor(1, 0, 0);
   private final Color yellowTarget1 = ColorMatch.makeColor(.5, 1, 0);
 
+  public static final double maxSpeed = 4; //meters per second
+  public static final double maxAngularVelocity = 2;
+
   public static final int kEncoderCPR = 2048;
     public static final double kWheelDiameterMeters = 0.1524;
     public static final double kEncoderDistancePerPulse =
