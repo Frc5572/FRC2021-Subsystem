@@ -16,15 +16,14 @@ public class ExecuteShooter extends CommandBase {
   private Shooter shooter;
 
   /**
-   * This creates the reuquirements from the shooter.
-   * @param shooter
+   * This creates the reuquirements from the shooter. 
    */
   public ExecuteShooter(Shooter shooter) {
     this.shooter = shooter;
     addRequirements(shooter);
     // Use addRequirements() here to declare subsystem dependencies.
-  
   }
+
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {}

@@ -16,7 +16,6 @@ public class RightTurretMove extends CommandBase {
 
   /**
    * This adds requirements from the shooter.java
-   * @param shooter
    */
   public RightTurretMove(Shooter shooter) {
     // Use addRequirements() here to declare subsystem dependencies.
