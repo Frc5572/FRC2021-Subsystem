@@ -8,12 +8,17 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Shooter;
 
-/** This creates a class that makes the shooter turn on and off
+/** 
+ * This creates a class that makes the shooter turn on and off.
  */
 public class ExecuteShooter extends CommandBase {
   /** Creates a new ExecuteShooter. */
   private Shooter shooter;
 
+  /**
+   * This creates the reuquirements from the shooter.
+   * @param shooter
+   */
   public ExecuteShooter(Shooter shooter) {
     this.shooter = shooter;
     addRequirements(shooter);

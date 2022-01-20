@@ -15,6 +15,10 @@ public class LeftTurretMove extends CommandBase {
   /** Creates a new LeftTurretMove. */
   private Shooter shooter;
   
+  /**
+   * This adds requirements from the shooter.java
+   * @param shooter
+   */
   public LeftTurretMove(Shooter shooter) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.shooter = shooter;

@@ -4,10 +4,10 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.revrobotics.CANSparkMax;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
@@ -17,9 +17,9 @@ public class Shooter extends SubsystemBase {
   private final WPI_TalonSRX  mshooterLeft = new WPI_TalonSRX(12);
   private final WPI_TalonSRX  mshooterRight  = new WPI_TalonSRX(14);
   private final SpeedControllerGroup shootingMotors =
-   new SpeedControllerGroup(mshooterLeft, mshooterRight);
+      new SpeedControllerGroup(mshooterLeft, mshooterRight);
   private final CANSparkMax turretMotor =
-   new CANSparkMax(13, MotorType.kBrushless);
+      new CANSparkMax(13, MotorType.kBrushless);
 
   public void spin() {
     shootingMotors.set(.7);
@@ -29,6 +29,7 @@ public class Shooter extends SubsystemBase {
   public void stop() {
     shootingMotors.set(0);
   }
+
   public void leftTurret() {
     turretMotor.set(.1);
   }
@@ -36,6 +37,7 @@ public class Shooter extends SubsystemBase {
   public void rightTurret() {
     turretMotor.set(-.1);
   }
+
   public void leftTurretStop() {
     turretMotor.set(0);
   }
