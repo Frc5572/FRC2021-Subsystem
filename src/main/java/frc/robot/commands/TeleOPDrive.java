@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
 
 /**
- * I don't know what it creates 
+ * I don't know what it creates.
  */
 public class TeleOPDrive extends CommandBase {
   private Joystick driver;
