@@ -5,8 +5,8 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
 * Returns a Climber object that runs the motors and pistons.
@@ -15,8 +15,10 @@ public class Climber extends SubsystemBase {
   int pcm1 = 0;
   int pcm2 = 1;
 
-  private final DoubleSolenoid climberSol1 = new DoubleSolenoid(pcm2,PneumaticsModuleType.CTREPCM, 4, 3);
-  private final DoubleSolenoid climberSol2 = new DoubleSolenoid(pcm1,PneumaticsModuleType.CTREPCM, 7, 0);
+  private final DoubleSolenoid climberSol1 = 
+    new DoubleSolenoid(pcm2, PneumaticsModuleType.CTREPCM, 4, 3);
+  private final DoubleSolenoid climberSol2 = 
+    new DoubleSolenoid(pcm1, PneumaticsModuleType.CTREPCM, 7, 0);
   private final CANSparkMax climber1 = new CANSparkMax(16, MotorType.kBrushless);
   private final CANSparkMax climber2 = new CANSparkMax(15, MotorType.kBrushless);
   private final MotorControllerGroup climberMotors = new MotorControllerGroup(climber1, climber2);

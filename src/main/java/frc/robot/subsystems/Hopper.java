@@ -6,8 +6,8 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 
 /**
@@ -19,7 +19,7 @@ public class Hopper extends SubsystemBase {
   int pcm2 = 1;
   final MotorControllerGroup hopper = 
       new MotorControllerGroup(new WPI_TalonSRX(9), new WPI_TalonSRX(10));
-  DoubleSolenoid hopperSol = new DoubleSolenoid(pcm1,PneumaticsModuleType.CTREPCM, 5, 2);
+  DoubleSolenoid hopperSol = new DoubleSolenoid(pcm1, PneumaticsModuleType.CTREPCM, 5, 2);
 
 
   public Hopper() {
