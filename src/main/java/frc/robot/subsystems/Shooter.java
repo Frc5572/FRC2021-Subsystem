@@ -7,7 +7,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
@@ -16,8 +16,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Shooter extends SubsystemBase {
   private final WPI_TalonSRX  mshooterLeft = new WPI_TalonSRX(12);
   private final WPI_TalonSRX  mshooterRight  = new WPI_TalonSRX(14);
-  private final SpeedControllerGroup shootingMotors =
-      new SpeedControllerGroup(mshooterLeft, mshooterRight);
+  private final MotorControllerGroup shootingMotors =
+      new MotorControllerGroup(mshooterLeft, mshooterRight);
   private final CANSparkMax turretMotor =
       new CANSparkMax(13, MotorType.kBrushless);
 

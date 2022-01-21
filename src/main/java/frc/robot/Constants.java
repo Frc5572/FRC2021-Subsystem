@@ -1,6 +1,5 @@
 package frc.robot;
 
-import com.revrobotics.ColorMatch;
 import edu.wpi.first.wpilibj.util.Color;
 
 /**
@@ -25,10 +24,8 @@ public final class Constants {
   final double hoodOffset = 30;
   final double pi = 3.14159265358979323846;
 
-  private final ColorMatch colorMatcher1 = new ColorMatch();
-
-  private final Color blueTarget1 = ColorMatch.makeColor(0, 0, 1);
-  private final Color greenTarget1 = ColorMatch.makeColor(0, 1, 0);
-  private final Color redTarget1 = ColorMatch.makeColor(1, 0, 0);
-  private final Color yellowTarget1 = ColorMatch.makeColor(.5, 1, 0);
+  private final Color blueTarget1 = Color.kBlue;
+  private final Color greenTarget1 = Color.kGreen;
+  private final Color redTarget1 = Color.kRed;
+  private final Color yellowTarget1 = Color.kYellow;
 }
