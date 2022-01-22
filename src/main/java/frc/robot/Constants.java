@@ -24,8 +24,4 @@ public final class Constants {
   final double hoodOffset = 30;
   final double pi = 3.14159265358979323846;
 
-  private final Color blueTarget1 = Color.kBlue;
-  private final Color greenTarget1 = Color.kGreen;
-  private final Color redTarget1 = Color.kRed;
-  private final Color yellowTarget1 = Color.kYellow;
 }
