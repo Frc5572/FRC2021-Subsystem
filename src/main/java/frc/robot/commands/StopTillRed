@@ -1,0 +1,33 @@
+package frc.robot.commands;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Drivetrain;
+
+/**
+ * I don't know what it creates.
+ */
+public class StopTillRed extends CommandBase {
+  private Drivetrain tankdrive;
+
+  public StopTillRed(Drivetrain drive) {
+    this.tankdrive = drive;
+    addRequirements(drive);
+  }
+
+  @Override
+  public void execute() {
+    moveStraight(.3);
+  }
+
+  @Override
+  public void isFinished() {
+
+  }
+
+  @Override
+  public void end() {
+    stop();
+  }
+}
