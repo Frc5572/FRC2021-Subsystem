@@ -19,16 +19,17 @@ public class StopTillRed extends CommandBase {
 
   @Override
   public void execute() {
-    moveStraight(.3);
+    tankdrive.moveStraight(.3);
   }
 
   @Override
-  public void isFinished() {
+  public boolean isFinished() {
     
+    return false;
   }
 
   @Override
-  public void end() {
-    stop();
+  public void end(boolean interruptible) {
+    tankdrive.stop();
   }
 }

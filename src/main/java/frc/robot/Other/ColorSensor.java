@@ -1,4 +1,4 @@
-package frc.robot.Other;
+package frc.robot.other;
 
 import edu.wpi.first.wpilibj.I2C;
 import com.revrobotics.ColorSensorV3;
