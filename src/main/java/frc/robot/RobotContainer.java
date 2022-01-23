@@ -21,28 +21,28 @@ public class RobotContainer {
   Joystick operator = new Joystick(1);
 
 
-  private final JoystickButton deploy = new JoystickButton(driver, XboxController.Button.kY.value);
-  private final POVButton rachetMotors = new POVButton(driver, 180);
-  private final POVButton hopperIn = new POVButton(operator, 0);
-  private final POVButton hopperOut = new POVButton(operator, 180);
-  private final Drivetrain tankDrive = new Drivetrain();
   private TreeMap<String, Command> autos = new TreeMap<String, Command>();
   private ArrayList<String> autoNames;
   private int cauto = 0;
   private int lengthOfList;
   private final Intake intake = new Intake();
-  private final JoystickButton intakeButton =
-      new JoystickButton(operator, XboxController.Button.kB.value);
   private final Climber climb = new Climber();
   private final Hopper hopper = new Hopper();
+  private final Drivetrain tankDrive = new Drivetrain();
+  //Values
+  private final POVButton rachetMotors = new POVButton(driver, 180);
+  private final POVButton hopperIn = new POVButton(operator, 0);
+  private final POVButton hopperOut = new POVButton(operator, 180);
+  private final JoystickButton deploy = new JoystickButton(driver, XboxController.Button.kY.value);
+  private final JoystickButton intakeButton =
+      new JoystickButton(operator, XboxController.Button.kB.value);
   private final JoystickButton rightTurret =
-      new JoystickButton(driver, XboxController.Button.kRightBumper.value);
+      new JoystickButton(operator, XboxController.Button.kRightBumper.value);
   private final JoystickButton leftTurret =
-      new JoystickButton(driver, XboxController.Button.kLeftBumper.value);
+      new JoystickButton(operator, XboxController.Button.kLeftBumper.value);
   private final Button shooterMotor =
-      new Button(() -> Math.abs(driver.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4);
+      new Button(() -> Math.abs(operator.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4);
   private final Shooter shooter = new Shooter();
-  
 
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
