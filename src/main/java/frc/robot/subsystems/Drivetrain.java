@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.math.*;
 
 public class Drivetrain extends SubsystemBase {
   private final SpeedControllerGroup leftMotors =
