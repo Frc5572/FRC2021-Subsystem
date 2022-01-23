@@ -23,7 +23,6 @@ public class Shooter extends SubsystemBase {
 
   public void spin() {
     shootingMotors.set(.7);
-    System.out.println("Spin active");
   }
 
   public void stop() {
@@ -31,11 +30,11 @@ public class Shooter extends SubsystemBase {
   }
 
   public void leftTurret() {
-    turretMotor.set(.1);
+    turretMotor.set(-.1);
   }
   
   public void rightTurret() {
-    turretMotor.set(-.1);
+    turretMotor.set(.1);
   }
 
   public void leftTurretStop() {
