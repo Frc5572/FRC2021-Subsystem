@@ -29,7 +29,7 @@ public class RobotContainer {
   private final Climber climb = new Climber();
   private final Hopper hopper = new Hopper();
   private final Drivetrain tankDrive = new Drivetrain();
-//Values
+  //Values
   private final POVButton rachetMotors = new POVButton(driver, 180);
   private final POVButton hopperIn = new POVButton(operator, 0);
   private final POVButton hopperOut = new POVButton(operator, 180);
