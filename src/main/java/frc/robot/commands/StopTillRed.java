@@ -24,8 +24,9 @@ public class StopTillRed extends CommandBase {
 
   @Override
   public boolean isFinished() {
-    
-    return false;
+    if (ColorSensor.colorString == ColorSensor.kRed){
+      return false;
+    }
   }
 
   @Override

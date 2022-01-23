@@ -29,11 +29,7 @@ public class RobotContainer {
   private int lengthOfList;
   private final Intake intake = new Intake();
   private final ColorSensor color = new ColorSensor();
-  private final JoystickButton intakeButton =
-      new JoystickButton(operator, XboxController.Button.kB.value);
   private final Climber climb = new Climber();
-  private final JoystickButton colorButton =
-        new JoystickButton(driver, XboxController.Button.kA.value);
   private final Hopper hopper = new Hopper();
   private final Drivetrain tankDrive = new Drivetrain();
   //Values
@@ -41,6 +37,8 @@ public class RobotContainer {
   private final POVButton hopperIn = new POVButton(operator, 0);
   private final POVButton hopperOut = new POVButton(operator, 180);
   private final JoystickButton deploy = new JoystickButton(driver, XboxController.Button.kY.value);
+  private final JoystickButton colorButton =
+      new JoystickButton(driver, XboxController.Button.kA.value);
   private final JoystickButton intakeButton =
       new JoystickButton(operator, XboxController.Button.kB.value);
   private final JoystickButton rightTurret =
