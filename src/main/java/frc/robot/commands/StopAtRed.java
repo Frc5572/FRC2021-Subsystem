@@ -9,10 +9,10 @@ import frc.robot.other.ColorSensor;
 /**
  * I don't know what it creates.
  */
-public class StopTillRed extends CommandBase {
+public class StopAtRed extends CommandBase {
   private Drivetrain tankdrive;
 
-  public StopTillRed(Drivetrain drive) {
+  public StopAtRed(Drivetrain drive) {
     this.tankdrive = drive;
     addRequirements(drive);
   }
