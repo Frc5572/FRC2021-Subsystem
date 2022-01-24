@@ -1,3 +1,7 @@
+// Copyright (c) FIRST and other WPILib contributors.
+// Open Source Software; you can modify and/or share it under the terms of
+// the WPILib BSD license file in the root directory of this project.
+
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -8,6 +12,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj2.command.button.Button;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 
@@ -28,11 +33,18 @@ public class RobotContainer {
   private final Drivetrain tankDrive = new Drivetrain();
 
   private final Intake intake = new Intake();
-  private final JoystickButton intakeButton =
-        new JoystickButton(operator, XboxController.Button.kB.value);
   private final Climber climb = new Climber();
   private final Hopper hopper = new Hopper();
-
+  //Values
+  private final JoystickButton intakeButton =
+      new JoystickButton(operator, XboxController.Button.kB.value);
+  private final JoystickButton rightTurret =
+      new JoystickButton(operator, XboxController.Button.kRightBumper.value);
+  private final JoystickButton leftTurret =
+      new JoystickButton(operator, XboxController.Button.kLeftBumper.value);
+  private final Button shooterMotor =
+      new Button(() -> Math.abs(operator.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4);
+  private final Shooter shooter = new Shooter();
 
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
@@ -48,6 +60,9 @@ public class RobotContainer {
     hopperIn.whileHeld(new HopperUp(hopper));
     hopperOut.whileHeld(new HopperDown(hopper));
     intakeButton.whileHeld(new IntakeRun(intake));
+    rightTurret.whileHeld(new RightTurretMove(shooter));
+    leftTurret.whileHeld(new LeftTurretMove(shooter));
+    shooterMotor.whenHeld(new ExecuteShooter(shooter));
   }
 
   public Command getAutonomousCommand() {
