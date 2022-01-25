@@ -1,7 +1,6 @@
 package frc.robot.commands;
 
 import com.revrobotics.ColorMatchResult;
-
 import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.other.ColorSensor;
@@ -15,6 +14,11 @@ public class StopAtRed extends CommandBase {
   private Shooter shooter;
   private ColorSensor color;
 
+  /**
+   * This is StopAtRed, the shooter runs till red is detected.
+   * @param shoot
+   * @param color
+   */
   public StopAtRed(Shooter shoot, ColorSensor color) {
     this.shooter = shoot;
     addRequirements(shoot);

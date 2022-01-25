@@ -1,9 +1,9 @@
 package frc.robot.other;
 
-import com.revrobotics.ColorSensorV3;
 import com.revrobotics.ColorMatchResult;
-import edu.wpi.first.wpilibj.I2C;
+import com.revrobotics.ColorSensorV3;
 import com.revrobotics.ColorMatch;
+import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.util.Color;
 
 
@@ -29,7 +29,6 @@ public class ColorSensor {
    * This is GetColorString.
    */
   public String getColorString() {
-
     Color detectedColor = colorSensor.getColor();
     String colorString;
     ColorMatchResult match = colorMatcher.matchClosestColor(detectedColor);
