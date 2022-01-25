@@ -1,12 +1,15 @@
 package frc.robot.other;
 
-import edu.wpi.first.wpilibj.I2C;
 import com.revrobotics.ColorSensorV3;
-import edu.wpi.first.wpilibj.util.Color;
+import edu.wpi.first.wpilibj.I2C;
 import com.revrobotics.ColorMatchResult;
+import edu.wpi.first.wpilibj.util.Color;
 import com.revrobotics.ColorMatch;
 
 
+/**
+ * Java Doc go brrrrrrrrrrr
+ */
 public class ColorSensor {
 
   private final I2C.Port i2cPort = I2C.Port.kOnboard;
