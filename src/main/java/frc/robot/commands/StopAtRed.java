@@ -16,8 +16,6 @@ public class StopAtRed extends CommandBase {
 
   /**
    * This is StopAtRed, the shooter runs till red is detected.
-   * @param shoot
-   * @param color
    */
   public StopAtRed(Shooter shoot, ColorSensor color) {
     this.shooter = shoot;
@@ -29,7 +27,7 @@ public class StopAtRed extends CommandBase {
   public void execute() {
     shooter.spin();
   }
-  
+
   @Override
   public boolean isFinished() {
     ColorMatchResult detectedcolor = color.getColor();
