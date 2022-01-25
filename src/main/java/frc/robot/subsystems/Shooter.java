@@ -30,11 +30,11 @@ public class Shooter extends SubsystemBase {
   }
 
   public void leftTurret() {
-    turretMotor.set(-.1);
+    turretMotor.set(.1);
   }
   
   public void rightTurret() {
-    turretMotor.set(.1);
+    turretMotor.set(-.1);
   }
 
   public void leftTurretStop() {

@@ -14,7 +14,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.button.Button;
 import frc.robot.commands.*;
+import frc.robot.other.ColorSensor;
 import frc.robot.subsystems.*;
+
 
 public class RobotContainer {
   Joystick driver = new Joystick(0);
@@ -33,9 +35,16 @@ public class RobotContainer {
   private final Drivetrain tankDrive = new Drivetrain();
 
   private final Intake intake = new Intake();
+  private final ColorSensor color = new ColorSensor();
   private final Climber climb = new Climber();
   private final Hopper hopper = new Hopper();
   //Values
+  private final POVButton rachetMotors = new POVButton(driver, 180);
+  private final POVButton hopperIn = new POVButton(operator, 0);
+  private final POVButton hopperOut = new POVButton(operator, 180);
+  private final JoystickButton deploy = new JoystickButton(driver, XboxController.Button.kY.value);
+  private final JoystickButton colorButton =
+      new JoystickButton(driver, XboxController.Button.kA.value);
   private final JoystickButton intakeButton =
       new JoystickButton(operator, XboxController.Button.kB.value);
   private final JoystickButton rightTurret =
@@ -63,6 +72,7 @@ public class RobotContainer {
     rightTurret.whileHeld(new RightTurretMove(shooter));
     leftTurret.whileHeld(new LeftTurretMove(shooter));
     shooterMotor.whenHeld(new ExecuteShooter(shooter));
+    colorButton.whenPressed(new StopAtRed(shooter, color));
   }
 
   public Command getAutonomousCommand() {
