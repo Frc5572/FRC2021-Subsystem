@@ -10,11 +10,9 @@ import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
-import frc.robot.autos.Auto;
 import frc.robot.commands.*;
 import frc.robot.other.ColorSensor;
 import frc.robot.subsystems.*;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
@@ -26,7 +24,6 @@ public class RobotContainer {
   private TreeMap<String, Command> autos = new TreeMap<String, Command>();
   private ArrayList<String> autoNames;
   private int cauto = 0;
-  private int lengthOfList;
   private final Intake intake = new Intake();
   private final ColorSensor color = new ColorSensor();
   private final Climber climb = new Climber();
@@ -63,7 +60,7 @@ public class RobotContainer {
     rightTurret.whileHeld(new RightTurretMove(shooter));
     leftTurret.whileHeld(new LeftTurretMove(shooter));
     shooterMotor.whenHeld(new ExecuteShooter(shooter));
-    colorButton.whileHeld(new PrintColor(color));
+    colorButton.whenPressed(new StopAtRed(shooter, color));
   }
 
   public Command getAutonomousCommand() {

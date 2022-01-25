@@ -13,12 +13,17 @@ public class ColorSensor {
   private ColorSensorV3 colorSensor = new ColorSensorV3(i2cPort);
   private final ColorMatch m_colorMatcher = new ColorMatch();
 
-  public ColorSensor() { }
+  public ColorSensor() { 
+    m_colorMatcher.addColorMatch(Color.kGreen);
+    m_colorMatcher.addColorMatch(Color.kBlue);
+    m_colorMatcher.addColorMatch(Color.kRed);
+    m_colorMatcher.addColorMatch(Color.kYellow);
+  }
 
-  public String GetColor() {
+  public String GetColorString() {
 
     Color detectedColor = colorSensor.getColor();
-    final String colorString;
+    String colorString;
     ColorMatchResult match = m_colorMatcher.matchClosestColor(detectedColor);
 
     if (match.color == Color.kBlue) {
@@ -33,6 +38,13 @@ public class ColorSensor {
       colorString = "Unknown";
     }
     return colorString;
+  }
+
+  public ColorMatchResult GetColor() {
+
+    Color detectedColor = colorSensor.getColor();
+    ColorMatchResult match = m_colorMatcher.matchClosestColor(detectedColor);
+    return match;
   }
 
   public void PrintA() {
