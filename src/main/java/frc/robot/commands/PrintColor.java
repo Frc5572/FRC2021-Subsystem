@@ -7,15 +7,15 @@ import frc.robot.other.ColorSensor;
  * This is PrintColor, it printsColor when a pushed.
  */
 public class PrintColor extends CommandBase {
-  private final ColorSensor Csensor;
+  private final ColorSensor colorSensor;
 
   public PrintColor(ColorSensor subsystem) {
-    Csensor = subsystem;
+    colorSensor = subsystem;
   }
 
   @Override
   public void execute() {
-    Csensor.printA();
+    colorSensor.printA();
   }
 
   @Override
