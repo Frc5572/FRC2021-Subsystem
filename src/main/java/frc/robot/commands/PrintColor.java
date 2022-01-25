@@ -12,7 +12,7 @@ public class PrintColor extends CommandBase {
 
   @Override
   public void execute() {
-    CSensor.PrintA();
+    CSensor.printA();
   }
 
   @Override
