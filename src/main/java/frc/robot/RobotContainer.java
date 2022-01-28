@@ -10,12 +10,11 @@ import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
-import frc.robot.autos.Auto;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import java.util.ArrayList;
 import java.util.TreeMap;
-
+import frc.robot.Other.*;
 public class RobotContainer {
   Joystick driver = new Joystick(0);
   Joystick operator = new Joystick(1);
@@ -40,12 +39,14 @@ public class RobotContainer {
   private final JoystickButton leftTurret =
       new JoystickButton(driver, XboxController.Button.kLeftBumper.value);
   private final Button shooterMotor =
+  
       new Button(() -> Math.abs(driver.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4);
   private final Shooter shooter = new Shooter();
-  
+  private final Limelight limelight = new Limelight();
 
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
+    limelight.PositionHood();
     configureButtonBindings();
   }
 

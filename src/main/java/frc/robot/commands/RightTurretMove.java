@@ -6,13 +6,14 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Shooter;
-
+import frc.robot.Other.Limelight;
 /**
  * It creates a class that moves the turret to the right when it's executed.
  */
 public class RightTurretMove extends CommandBase {
   /** Creates a new LeftTurretMove. */
   private Shooter shooter;
+  private Limelight limelight;
 
   /**
    * This adds requirements from the shooter.java
@@ -21,6 +22,8 @@ public class RightTurretMove extends CommandBase {
     // Use addRequirements() here to declare subsystem dependencies.
     this.shooter = shooter;
     addRequirements(shooter);
+
+    this.limelight = limelight;
   }
   
   // Called when the command is initially scheduled.
@@ -38,7 +41,7 @@ public class RightTurretMove extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    this.shooter.rightTurretStop();
+    this.limelight.AutoAim();
   }
 
   // Returns true when the command should end.

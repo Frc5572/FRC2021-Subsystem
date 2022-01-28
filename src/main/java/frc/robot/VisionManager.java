@@ -14,7 +14,7 @@ public class VisionManager {
     public double disX = 0, disY = 0, tx = 0, ty = 0, ta = 0, tv = 0;
     boolean targetFound = false;
 
-    double Update(){
+    public double Update(){
         NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
         tx = table.getEntry("tx").getDouble(0.0);
         ty = table.getEntry("ty").getDouble(0.0);
