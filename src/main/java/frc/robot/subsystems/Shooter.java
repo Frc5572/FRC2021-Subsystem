@@ -26,7 +26,6 @@ public class Shooter extends SubsystemBase {
 
   public void spin() {
     shootingMotors.set(.7);
-    System.out.println("Spin active");
   }
 
   public void stop() {
