@@ -40,14 +40,10 @@ public class Limelight{
         double sLong = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tlong").getDouble(1);
         double os = SmartDashboard.getNumber("Hood Angle Adjust", Constants.hoodOffset);
         double area = sLong * sShort;
-        // std::cout << "Total area: " << area << "\n";
         System.out.println(Constants.CalculateDistance(area) + "inches\n");
         double a1 = java.lang.Math.atan2(Constants.heightdiff, Constants.CalculateDistance(area)) * (180/Constants.pi);
-        // std::cout << "a1 " << a1 << "\n";
         double a2 = 90 - a1 - os;
-        // std::cout << "a2 " << a2 << "\n";
         double p = (1 / (Constants.maxAngle - Constants.minAngle))*(a2-Constants.maxAngle) + 1;
-        // std::cout << "servo position" << p << "\n";
         if (p >= .7) {
             p = .7;
         }

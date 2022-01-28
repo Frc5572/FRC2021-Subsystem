@@ -1,4 +1,4 @@
-package frc.robot.other;
+package frc.robot.Other;
 
 import com.revrobotics.ColorMatch;
 import com.revrobotics.ColorMatchResult;

@@ -1,7 +1,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.other.ColorSensor;
+import frc.robot.Other.ColorSensor;
 
 /**
  * This is PrintColor, it printsColor when a pushed.
