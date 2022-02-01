@@ -49,7 +49,10 @@ public class RobotContainer {
   private final Shooter shooter = new Shooter();
   private final Button shooterMotor =
     new Button(() -> Math.abs(operator.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4)
-      .whenPressed(new InstantCommand(shooter::enable, shooter))
+      .whenPressed(new ConditionalCommand(
+        new InstantCommand(shooter::enable, shooter),
+        new InstantCommand(),
+        shooter::atSetpoint))
       .whenReleased(new InstantCommand(shooter::disable, shooter));
 
   public RobotContainer() {
