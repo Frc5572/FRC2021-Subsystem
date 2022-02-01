@@ -9,10 +9,10 @@ import frc.robot.subsystems.Drivetrain;
  * I don't know what it creates.
  */
 public class TeleOPDrive extends CommandBase {
-  private Joystick driver;
+  private XboxController driver;
   private Drivetrain tankdrive;
 
-  public TeleOPDrive(Drivetrain tankdrive, Joystick controller) {
+  public TeleOPDrive(Drivetrain tankdrive, XboxController controller) {
     this.driver = controller;
     this.tankdrive = tankdrive;
     addRequirements(tankdrive);

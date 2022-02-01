@@ -20,8 +20,7 @@ public class Shooter extends SubsystemBase {
   private final WPI_TalonSRX  mshooterRight  = new WPI_TalonSRX(14);
   private final MotorControllerGroup shootingMotors =
       new MotorControllerGroup(mshooterLeft, mshooterRight);
-  private final CANSparkMax turretMotor =
-      new CANSparkMax(13, MotorType.kBrushless);
+ 
   public final Servo servo = new Servo(1);
 
   public void spin() {
@@ -32,12 +31,6 @@ public class Shooter extends SubsystemBase {
     shootingMotors.set(0);
   }
 
-  public void leftTurret() {
-    turretMotor.set(.1);
-  }
   
-  public void rightTurret() {
-    turretMotor.set(-.1);
-  }
     
 }

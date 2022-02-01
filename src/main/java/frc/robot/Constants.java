@@ -29,20 +29,12 @@ public final class Constants {
   private final Color redTarget1 = Color.kRed;
   private final Color yellowTarget1 = Color.kYellow;
 
-  public final double CalculateDistance(double area){
-    double r = x1*java.lang.Math.pow(area, 3) + x2*java.lang.Math.pow(area, 2) +x3*area + b1;
-    return r;}
-
-  public final double CalculateAngle(double distance){
-    double t = java.lang.Math.atan2(heightdiff , distance);
-    double d = t * (180 / pi);
-    double corrected_d = (90 - d - 25);
-     double r = m1 * corrected_d  + b1;
-    if (corrected_d > 64) {
-        r = limitServo;
-    } else if (corrected_d < 26) {
-        r = 0;
-    }
-    return r;
+  public static final class VisionConstants {
+    public static final double deadPocket = 0.4;
+    public static final double limelightHeight = 12;
+    public static final double targetHeight = 64;
+    public static final double limelightAngle = 49;
 }
+
+  
 }
