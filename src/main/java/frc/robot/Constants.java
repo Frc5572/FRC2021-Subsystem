@@ -24,4 +24,19 @@ public final class Constants {
   final double hoodOffset = 30;
   final double pi = 3.14159265358979323846;
 
+  public static final boolean kEncoderReversed = false;
+  public static final int kEncoderCPR = 1024;
+  public static final double kEncoderDistancePerPulse = 1.0 / (double) kEncoderCPR;
+
+  public static final double kP = 1;
+  public static final double kI = 0;
+  public static final double kD = 0;
+
+  public static final double kShooterFreeRPS = 5300;
+  public static final double kShooterTargetRPS = 4000;
+  public static final double kShooterToleranceRPS = 50;
+
+  public static final int kUnitsPerRevolution = 2048;
+  public static final double kSVolts = 0.05;
+  public static final double kVVoltSecondsPerRotation = 12.0 / kShooterFreeRPS;
 }

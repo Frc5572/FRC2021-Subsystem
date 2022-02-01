@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.Button;
@@ -15,6 +16,9 @@ import frc.robot.other.ColorSensor;
 import frc.robot.subsystems.*;
 import java.util.ArrayList;
 import java.util.TreeMap;
+import edu.wpi.first.wpilibj2.command.ConditionalCommand;
+import edu.wpi.first.wpilibj2.command.RunCommand;
+import edu.wpi.first.wpilibj2.command.WaitCommand;
 
 public class RobotContainer {
   Joystick driver = new Joystick(0);
@@ -42,9 +46,11 @@ public class RobotContainer {
       new JoystickButton(operator, XboxController.Button.kRightBumper.value);
   private final JoystickButton leftTurret =
       new JoystickButton(operator, XboxController.Button.kLeftBumper.value);
-  private final Button shooterMotor =
-      new Button(() -> Math.abs(operator.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4);
   private final Shooter shooter = new Shooter();
+  private final Button shooterMotor =
+    new Button(() -> Math.abs(operator.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4)
+      .whenPressed(new InstantCommand(shooter::enable, shooter))
+      .whenReleased(new InstantCommand(shooter::disable, shooter));
 
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
@@ -57,10 +63,6 @@ public class RobotContainer {
     hopperIn.whileHeld(new HopperUp(hopper));
     hopperOut.whileHeld(new HopperDown(hopper));
     intakeButton.whileHeld(new IntakeRun(intake));
-    rightTurret.whileHeld(new RightTurretMove(shooter));
-    leftTurret.whileHeld(new LeftTurretMove(shooter));
-    shooterMotor.whenHeld(new ExecuteShooter(shooter));
-    colorButton.whenPressed(new StopAtRed(shooter, color));
   }
 
   public Command getAutonomousCommand() {
