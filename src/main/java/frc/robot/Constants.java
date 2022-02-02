@@ -32,8 +32,8 @@ public final class Constants {
   public static final double kI = 0;
   public static final double kD = 0;
 
-  public static final double kShooterFreeRPS = 5300;
-  public static final double kShooterTargetRPS = 4000;
+  public static final double kShooterFreeRPS = 4000;
+  public static final double kShooterTargetRPS = 2000;
   public static final double kShooterToleranceRPS = 50;
 
   public static final int kUnitsPerRevolution = 2048;
