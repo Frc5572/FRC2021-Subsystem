@@ -13,11 +13,8 @@ public final class Constants {
   public final double heightOfShooter = 38;
   public final double heightOfTower = 98;
   public final double heightdiff = heightOfTower - heightOfShooter;
-  public final double minAngle = 25;
-  public final double maxAngle = 65;
   public final double maxPosition = 0;
   public final double minPosition = 1;
-  public final double m1 = -(maxPosition - minPosition) / (maxAngle - minAngle);
   public final double b2 = -.625;
   public final double limitTurret = 20;
   public final double limitServo = .7;
@@ -31,9 +28,11 @@ public final class Constants {
 
   public static final class VisionConstants {
     public static final double deadPocket = 0.4;
-    public static final double limelightHeight = 12;
-    public static final double targetHeight = 64;
-    public static final double limelightAngle = 49;
+    public static final double limelightHeight = 38;
+    public static final double targetHeight = 98;
+    public static final double limelightAngle = 20;
+    public static final double minAngle = 25;
+    public static final double maxAngle = 65;
 }
 
   

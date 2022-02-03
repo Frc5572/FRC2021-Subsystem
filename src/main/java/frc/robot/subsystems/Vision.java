@@ -41,6 +41,15 @@ public class Vision extends SubsystemBase {
         return distance;
     }
 
+    public double getServoValues() {
+        double p = (1 / (Constants.VisionConstants.maxAngle - Constants.VisionConstants.minAngle))*(a2-Constants.VisionConstants.maxAngle) + 1;
+        // std::cout << "servo position" << p << "\n";
+        if (p >= .7) {
+            p = .7;
+        }
+        return p;
+    }
+
     /**
      *
      * @return distance from center of target

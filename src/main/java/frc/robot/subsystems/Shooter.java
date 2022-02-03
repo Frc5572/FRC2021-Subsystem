@@ -9,7 +9,6 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.Servo;
 
 
 /**
@@ -21,7 +20,6 @@ public class Shooter extends SubsystemBase {
   private final MotorControllerGroup shootingMotors =
       new MotorControllerGroup(mshooterLeft, mshooterRight);
  
-  public final Servo servo = new Servo(1);
 
   public void spin() {
     shootingMotors.set(.7);
