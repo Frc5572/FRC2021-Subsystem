@@ -24,4 +24,5 @@ public final class Constants {
   final double hoodOffset = 30;
   final double pi = 3.14159265358979323846;
 
+  public static final int kUnitsPerRevolution = 2048;
 }
