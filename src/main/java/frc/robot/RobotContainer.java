@@ -48,12 +48,7 @@ public class RobotContainer {
       new JoystickButton(operator, XboxController.Button.kLeftBumper.value);
   private final Shooter shooter = new Shooter();
   private final Button shooterMotor =
-    new Button(() -> Math.abs(operator.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4)
-      .whenPressed(new ConditionalCommand(
-        new InstantCommand(shooter::enable, shooter),
-        new InstantCommand(),
-        shooter::atSetpoint))
-      .whenReleased(new InstantCommand(shooter::disable, shooter));
+    new Button(() -> Math.abs(operator.getRawAxis(XboxController.Axis.kRightTrigger.value)) > .4);
 
   public RobotContainer() {
     tankDrive.setDefaultCommand(new TeleOPDrive(tankDrive, driver));
@@ -66,6 +61,8 @@ public class RobotContainer {
     hopperIn.whileHeld(new HopperUp(hopper));
     hopperOut.whileHeld(new HopperDown(hopper));
     intakeButton.whileHeld(new IntakeRun(intake));
+    shooterMotor.whenPressed(new InstantCommand(shooter::enable, shooter))
+    .whenReleased(new InstantCommand(shooter::disable, shooter));
   }
 
   public Command getAutonomousCommand() {

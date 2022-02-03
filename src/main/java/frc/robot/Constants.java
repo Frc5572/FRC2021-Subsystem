@@ -37,6 +37,6 @@ public final class Constants {
   public static final double kShooterToleranceRPS = 50;
 
   public static final int kUnitsPerRevolution = 2048;
-  public static final double kSVolts = 0.05;
-  public static final double kVVoltSecondsPerRotation = 12.0 / kShooterFreeRPS;
+  public static final double kSVolts = 0.572;
+  public static final double kVVoltSecondsPerRotation = (0.002 / 60) / kShooterFreeRPS;
 }
