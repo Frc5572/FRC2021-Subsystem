@@ -5,40 +5,41 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Shooter;
+import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.subsystems.Turret;
 
-/**
- * It creates a class that moves the turret to the right when it's executed.
- */
-public class RightTurretMove extends CommandBase {
-  /** Creates a new LeftTurretMove. */
-  private Shooter shooter;
-
-  /**
-   * This adds requirements from the shooter.java
-   */
-  public RightTurretMove(Shooter shooter) {
-    // Use addRequirements() here to declare subsystem dependencies.
-    this.shooter = shooter;
-    addRequirements(shooter);
+public class alignTurret extends CommandBase {
+  Turret turret;;
+  XboxController driver;
+  /** Creates a new alignTurret. */
+  public alignTurret(Turret turret, XboxController driver){
+    this.driver = driver;
+    this.turret = turret;
+    addRequirements(turret);
   }
-  
+
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    turret.zerServos();
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    this.shooter.rightTurret();
-
-
+    if(driver.getLeftBumper()){
+      turret.leftTurret();
+    } else if (driver.getRightBumper()){
+      turret.rightTurret();
+    } else {
+      turret.align();
+    }
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    this.shooter.rightTurretStop();
+    turret.zerServos();
   }
 
   // Returns true when the command should end.

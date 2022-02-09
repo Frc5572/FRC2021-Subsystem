@@ -10,6 +10,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
+
 /**
  * This creats a class that makes a function for the shooter and for the turret.
  */
@@ -18,8 +19,7 @@ public class Shooter extends SubsystemBase {
   private final WPI_TalonSRX  mshooterRight  = new WPI_TalonSRX(14);
   private final MotorControllerGroup shootingMotors =
       new MotorControllerGroup(mshooterLeft, mshooterRight);
-  private final CANSparkMax turretMotor =
-      new CANSparkMax(13, MotorType.kBrushless);
+ 
 
   public void spin() {
     shootingMotors.set(.7);
@@ -29,20 +29,6 @@ public class Shooter extends SubsystemBase {
     shootingMotors.set(0);
   }
 
-  public void leftTurret() {
-    turretMotor.set(.1);
-  }
   
-  public void rightTurret() {
-    turretMotor.set(-.1);
-  }
-
-  public void leftTurretStop() {
-    turretMotor.set(0);
-  }
-    
-  public void rightTurretStop() {
-    turretMotor.set(0);
-  }
     
 }

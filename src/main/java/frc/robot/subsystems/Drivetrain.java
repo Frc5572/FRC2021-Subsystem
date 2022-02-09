@@ -18,6 +18,11 @@ public class Drivetrain extends SubsystemBase {
     leftMotors.set(yAxis);
     rightMotors.set(yAxis2);
   }
+  public double l = leftMotors.get();
+        
+  public double r = rightMotors.get();
+  
+
 
   public void moveStraight(double speed) {
     leftMotors.set(speed);
